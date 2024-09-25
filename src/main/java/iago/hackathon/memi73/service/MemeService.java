@@ -64,9 +64,9 @@ public class MemeService {
         return todos.get(indexAleatorio).toDTO();
     }
 
-    public Page<MemeCompletoDTO> pegarMemesCompartilhados(Pageable pageable) {
-        Page<Meme> memes = repository.findAllByCompartilhadoTrue(pageable);
-        return memes.map(Meme::toDTO);
+    public List<MemeCompletoDTO> pegarMemesCompartilhados() {
+        List<Meme> memes = repository.findAllByCompartilhadoTrue();
+        return memes.stream().map(Meme::toDTO).toList();
     }
 
     public MemeCompletoDTO compartilharMeme(Long id) throws Exception {

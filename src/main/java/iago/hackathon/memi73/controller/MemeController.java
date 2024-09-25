@@ -47,8 +47,8 @@ public class MemeController {
     }
 
     @GetMapping("/compartilhados")
-    public ResponseEntity<?> pegarMemesCompartilhados(@PageableDefault() Pageable pageable){
-        return new ResponseEntity<>(service.pegarMemesCompartilhados(pageable), HttpStatus.OK);
+    public ResponseEntity<?> pegarMemesCompartilhados(){
+        return new ResponseEntity<>(service.pegarMemesCompartilhados(), HttpStatus.OK);
     }
 
 }
