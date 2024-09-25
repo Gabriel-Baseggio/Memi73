@@ -79,7 +79,7 @@ public class MemeService {
     public MemeCompletoDTO compatilharECriarMeme(MemeCompletoDTO memeCompletoDTO){
         Imagem imagem = imagemService.pegarImagemId(memeCompletoDTO.imagem().id());
         Frase frase = fraseService.pegerFraseId(memeCompletoDTO.frase().id());
-        Meme meme = new Meme(null, frase, imagem, false);
+        Meme meme = new Meme(null, frase, imagem, true);
         return repository.save(meme).toDTO();
     }
 }
